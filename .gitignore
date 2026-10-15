@@ -1,0 +1,13 @@
+## Visual Studio / IDE Caches
+.vs/
+*.user
+*.suo
+*.userosscache
+*.sln.docstates
+
+## Build outputs
+[Bb]in/
+[Oo]bj/
+
+## Publishing outputs
+publish/
