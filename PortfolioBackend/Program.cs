@@ -52,15 +52,13 @@ builder.Services.AddRateLimiter(options =>
 
 var app = builder.Build();
 
-if (app.Environment.IsDevelopment())
+app.MapOpenApi();
+app.UseSwaggerUI(options =>
 {
-    app.MapOpenApi();
-    app.UseSwaggerUI(options =>
-    {
-        options.SwaggerEndpoint("/openapi/v1.json", "Portfolio API v1");
-        options.RoutePrefix = "swagger";
-    });
-}
+    options.SwaggerEndpoint("/openapi/v1.json", "Portfolio API v1");
+    options.RoutePrefix = "swagger";
+});
+
 
 app.UseHttpsRedirection();
 
