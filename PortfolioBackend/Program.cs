@@ -23,12 +23,9 @@ builder.Services.AddCors(options =>
 {
     options.AddPolicy(ContactCorsPolicy, policy =>
     {
-        policy.WithOrigins(
-                "http://localhost:4200",             
-                "https://hardik-khandala.github.io"    
-              )
+        policy.AllowAnyOrigin()
               .AllowAnyHeader()
-              .WithMethods("POST");
+              .AllowAnyMethod();
     });
 });
 
